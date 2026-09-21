@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="国产宝马X5全面评测与购车指南，包含配置参数、动力性能对比、价格分析及购车建议，为您解读宝马X5的优缺点与市场行情。">
+    <meta name="keywords" content="国产宝马X5, 宝马X5, X5, 宝马国产, SUV, 汽车评测">
+    <title>国产宝马X5-深度评测与购车指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0066b1;
+            --primary-dark: #004e87;
+            --accent-color: #f0ad4e;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+            --container-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-main);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-desc {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #003366 0%, #0066b1 100%);
+            color: var(--white);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-image img {
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            max-width: 500px;
+        }
+
+        /* Specs Grid */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .spec-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .spec-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .spec-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            background-color: var(--white);
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--bg-light);
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        tr:hover {
+            background-color: #fafafa;
+        }
+
+        .check-mark::before {
+            content: '✓';
+            color: green;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .cross-mark::before {
+            content: '✕';
+            color: #d9534f;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(0, 102, 177, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Price & Buying Guide */
+        .price-section {
+            background-color: #eef2f5;
+        }
+
+        .price-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .price-list {
+            margin-top: 30px;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .price-item:last-child {
+            border-bottom: none;
+        }
+
+        .price-item strong {
+            font-size: 1.1rem;
+        }
+
+        .price-item span {
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background-color: var(--white);
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-light);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        .icon-plus {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .icon-plus {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #ccc;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-top: 30px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-container">
+        <a href="#" class="logo">Bmw<span>X5</span></a>
+        <nav>
+            <ul>
+                <li><a href="#overview" class="active">车型概览</a></li>
+                <li><a href="#specs">参数配置</a></li>
+                <li><a href="#comparison">对比分析</a></li>
+                <li><a href="#buying">购车指南</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>豪华SUV新标杆<br>国产宝马X5深度解析</h1>
+                <p>作为豪华中大型SUV市场的标杆车型，国产宝马X5在保持原汁原味驾驶乐趣的同时，针对中国市场进行了多项本土化优化。了解它的核心优势与潜在挑战。</p>
+                <div class="hero-btns">
+                    <a href="#specs" class="btn btn-primary">查看参数</a>
+                    <a href="#buying" class="btn btn-outline">价格分析</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://picsum.photos/seed/bmwx5hero/500/350" alt="国产宝马X5外观实拍图">
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">车型概况</h2>
+                <p class="section-desc">国产宝马X5（G18）自上市以来，凭借其出色的操控性和豪华的内饰质感，赢得了众多高端消费者的青睐。</p>
+            </div>
+            
+            <div class="features-grid">
+                <article class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3>强劲动力</h3>
+                    <p>提供2.0T低功率、2.0T高功率及3.0T直列六缸发动机可选，匹配采埃孚8AT变速箱，动力输出平顺且响应迅速。</p>
+                </article>
+                <article class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>安全配置</h3>
+                    <p>标配全方位安全气囊、主动刹车、车道保持辅助等，并搭载了宝马最新的iDrive 8.5车载系统。</p>
+                </article>
+                <article class="feature-item">
+                    <div class="feature-icon">🛋️</div>
+                    <h3>豪华座舱</h3>
+                    <p>采用大量软性材质包裹，配备悬浮式曲面屏，后排独立空调及老板键配置，兼顾舒适与科技感。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specs Section -->
+    <section id="specs" class="section" style="background-color: var(--white);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">核心参数一览</h2>
+            </div>
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-value">3.0T</div>
+                    <div class="spec-label">发动机排量（高配）</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-value">285kW</div>
+                    <div class="spec-label">最大功率</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-value">550N·m</div>
+                    <div class="spec-label">最大扭矩</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-value">6.9s</div>
+                    <div class="spec-label">0-100km/h加速</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-value">6.9L</div>
+                    <div class="spec-label">综合油耗（WLTC）</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-value">3105mm</div>
+                    <div class="spec-label">轴距</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="section comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">国产版 vs 进口版</h2>
+                <p class="section-desc">针对消费者关心的核心差异进行详细对比分析。</p>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>对比项目</th>
+                            <th>国产宝马X5 (G18)</th>
+                            <th>进口宝马X5 (F95)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>动力总成</strong></td>
+                            <td><span class="check-mark">国产专供</span> 2.0T / 3.0T (B48/B58)</td>
+                            <td><span class="check-mark">保留</span> 3.0T / 4.4T (B58/S58)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>变速箱</strong></td>
+                            <td><span class="check-mark">标配</span> 采埃孚8AT</td>
+                            <td><span class="check-mark">标配</span> 采埃孚8AT</td>
+                        </tr>
+                        <tr>
+                            <td><strong>四驱系统</strong></td>
+                            <td><span class="check-mark">xDrive智能四驱</span></td>
+                            <td><span class="check-mark">xDrive智能四驱</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>售价区间</strong></td>
+                            <td><span class="check-mark">约60-80万</span></td>
+                            <td><span class="check-mark">约70-100万</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>后排空间</strong></td>
+                            <td><span class="check-mark">轴距加长</span> (3105mm)</td>
+                            <td><span class="cross-mark">标准轴距</span> (2975mm)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>配置差异</strong></td>
+                            <td><span class="check-mark">增加</span> 品牌标识、部分舒适配置</td>
+                            <td><span class="cross-mark">缺失</span> 品牌标识</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.9rem; color: #666; text-align: center;">
+                *注：进口版X5在顶配车型上提供4.4T V8发动机及M运动套装，国产版暂未引进。
+            </p>
+        </div>
+    </section>
+
+    <!-- Buying Guide Section -->
+    <section id="buying" class="section price-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">购车指南与价格</h2>
+                <p class="section-desc">了解当前市场行情，为您的购车决策提供参考。</p>
+            </div>
+            <div class="price-card">
+                <h3>2024款 国产宝马X5 价格区间</h3>
+                <div class="price-list">
+                    <div class="price-item">
+                        <strong>2.0T xDrive 30Li M运动套装</strong>
+                        <span>约 61.5万 - 69.5万</span>
+                    </div>
+                    <div class="price-item">
+                        <strong>2.0T xDrive 30Li 尊享型 M运动套装</strong>
+                        <span>约 69.5万 - 76.5万</span>
+                    </div>
+                    <div class="price-item">
+                        <strong>3.0T xDrive 40Li M运动套装</strong>
+                        <span>约 72.8万 - 80.8万</span>
+                    </div>
+                    <div class="price-item">
+                        <strong>3.0T xDrive 40Li 尊享型 M运动套装</strong>
+                        <span>约 80.8万 - 88.8万</span>
+                    </div>
+                </div>
+                <div style="margin-top: 30px; padding: 20px; background-color: #eef7ff; border-radius: 8px; color: #0056b3;">
+                    <strong>💡 购车建议：</strong> 
+                    <p style="margin-top: 10px; font-size: 0.95rem;">
+                        如果主要在城市通勤，2.0T版本已完全满足需求且油耗相对更低；若追求极致动力体验，3.0T直列六缸发动机是宝马品牌的精髓所在。建议关注厂家金融政策及置换补贴。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" style="background-color: var(--white);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">常见问题 (FAQ)</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        国产宝马X5和进口版有什么区别？
+                        <span class="icon-plus">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>国产版（G18）主要针对中国市场加长轴距（3105mm），后排空间更宽敞，并增加了部分本土化配置。同时国产版取消了车尾的“BMW”英文标识。进口版（F95）则保留了标准轴距，且顶配车型提供4.4T V8发动机。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        国产X5的油耗表现如何？
+                        <span class="icon-plus">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>根据WLTC综合工况测试，2.0T版本油耗约为8.3-9.0L/100km，3.0T版本约为9.0-9.5L/100km。实际驾驶中，高速路况下油耗表现会优于市区拥堵路况。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        哪个配置版本性价比最高？
+                        <span class="icon-plus">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>对于大多数家庭用户，3.0T xDrive 40Li M运动套装是性价比之选，兼顾了动力储备与品牌面子。如果预算有限，2.0T版本配置也相当丰富，主要区别在于加速性能和引擎声浪。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <p>致力于为汽车爱好者提供最新、最客观的汽车资讯与评测内容。</p>
+            </div>
+            <div class="footer-col">
+                <h4>热门车型</h4>
+                <ul>
+                    <li><a href="#">宝马3系</a></li>
+                    <li><a href="#">宝马5系</a></li>
+                    <li><a href="#">宝马X3</a></li>
+                    <li><a href="#">奥迪Q5L</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">购车流程</a></li>
+                    <li><a href="#">金融方案</a></li>
+                    <li><a href="#">售后服务</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 汽车资讯网. All Rights Reserved. 本页面内容仅供参考，具体价格以4S店实际报价为准。</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // FAQ Accordion Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+  </html>
