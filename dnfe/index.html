@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dnfeiji吧 - 飞机模型爱好者交流与展示平台</title>
+    <meta name="description" content="dnfeiji吧是一个专注于飞机模型收藏、制作与展示的垂直社区。提供各类静态模型、遥控航模的评测、组装教程、改装案例及二手交易信息，是模型爱好者的聚集地。">
+    <meta name="keywords" content="dnfeiji吧, 飞机模型, 静态模型, 航模, 遥控飞机, 模型制作, 模型评测">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f39c12;
+            --dark-bg: #1a1a1a;
+            --card-bg: #2d2d2d;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-color: #444;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            backdrop-filter: blur(5px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .nav-search {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .nav-search {
+                display: block;
+            }
+            .nav-search input {
+                padding: 6px 12px;
+                border-radius: 4px;
+                border: 1px solid var(--border-color);
+                background: var(--card-bg);
+                color: var(--text-main);
+                outline: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 992px) {
+            .grid-layout {
+                grid-template-columns: 3fr 1fr;
+            }
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 12px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--text-main);
+        }
+
+        .more-link {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Card Styles */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary-color);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            background-color: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+        }
+
+        .card-content {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 10px;
+        }
+
+        .card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .hot-list {
+            list-style: none;
+        }
+
+        .hot-list li {
+            margin-bottom: 12px;
+        }
+
+        .hot-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .hot-list a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hot-list .rank {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-right: 8px;
+        }
+
+        .hot-list .count {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Topic Categories */
+        .topic-list {
+            list-style: none;
+        }
+
+        .topic-list li {
+            margin-bottom: 10px;
+        }
+
+        .topic-link {
+            display: block;
+            padding: 8px 12px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.03);
+            font-size: 0.95rem;
+        }
+
+        .topic-link:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--primary-color);
+        }
+
+        /* Forum Table Style */
+        .forum-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .forum-table th, .forum-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .forum-table th {
+            color: var(--text-muted);
+            font-weight: normal;
+            width: 50%;
+        }
+
+        .forum-table td {
+            color: var(--text-main);
+        }
+
+        .forum-table a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Utility */
+        .btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #004494;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">dnfeiji<span>吧</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">图集</a></li>
+                    <li><a href="#">论坛</a></li>
+                    <li><a href="#">交易</a></li>
+                </ul>
+            </nav>
+            <div class="nav-search">
+                <input type="text" placeholder="搜索模型、型号...">
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>探索天空的极致魅力</h1>
+            <p>dnfeiji吧是模型爱好者聚集地，涵盖静态模型、遥控航模、军迷装备等领域的深度评测与经验分享。</p>
+            <div class="hero-tags">
+                <span class="tag">喷气式战机</span>
+                <span class="tag">二战飞机</span>
+                <span class="tag">航模评测</span>
+                <span class="tag">模型涂装</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="grid-layout">
+            <!-- Left Column: Content -->
+            <div class="content-area">
+                
+                <!-- Featured Section -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">精选推荐</h2>
+                        <a href="#" class="more-link">查看更多 &rarr;</a>
+                    </div>
+                    <div class="card-grid">
+                        <article class="card">
+                            <div class="card-image">
+                                <span class="card-badge">评测</span>
+                                <img src="https://picsum.photos/seed/aircraft1/400/300" alt="F-22猛禽模型评测">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title"><a href="#">1:72 F-22猛禽静态模型组装全记录与涂装心得</a></h3>
+                                <p class="card-excerpt">详细记录了这款热门模型的拼装过程，特别是水贴处理和暗影上色的技巧分享。</p>
+                                <div class="card-meta">
+                                    <span>作者: 模型老张</span>
+                                    <span>2023-10-24</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-image">
+                                <span class="card-badge">图集</span>
+                                <img src="https://picsum.photos/seed/aircraft2/400/300" alt="波音747航模">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title"><a href="#">梦幻客机：1:48波音747-400模型展示</a></h3>
+                                <p class="card-excerpt">精美的内部驾驶舱细节还原，带你领略民航客机的内部构造。</p>
+                                <div class="card-meta">
+                                    <span>作者: 飞行家阿强</span>
+                                    <span>2023-10-22</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-image">
+                                <span class="card-badge">教程</span>
+                                <img src="https://picsum.photos/seed/aircraft3/400/300" alt="螺旋桨飞机模型">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title"><a href="#">初学者指南：如何选择你的第一架航模</a></h3>
+                                <p class="card-excerpt">针对新手推荐了几款适合入门的固定翼和直升机模型，避坑指南。</p>
+                                <div class="card-meta">
+                                    <span>作者: 新手村村长</span>
+                                    <span>2023-10-20</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Forum List Section -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">热门讨论区</h2>
+                    </div>
+                    <table class="forum-table">
+                        <tbody>
+                            <tr>
+                                <th>模型展示与作品集</th>
+                                <td>
+                                    <a href="#">[分享] 我的第一套1:72野马</a><br>
+                                    <a href="#">[求] 1:48 猛禽套件求购</a><br>
+                                    <a href="#">[讨论] 静态模型与RC遥控哪个更值得入坑？</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>技术与DIY</th>
+                                <td>
+                                    <a href="#">水贴起泡怎么办？解决方案汇总</a><br>
+                                    <a href="#">自制模型支架与展示柜制作教程</a><br>
+                                    <a href="#">模型喷漆环境要求与设备推荐</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>二手交易市场</th>
+                                <td>
+                                    <a href="#">出闲置 1:32 苏-27 尾部细节件</a><br>
+                                    <a href="#">收 1:48 运-20 模型套件</a><br>
+                                    <a href="#">交换模型周边：徽章与贴纸</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- News/Updates Section -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">最新动态</h2>
+                    </div>
+                    <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));">
+                        <article class="card" style="flex-direction: row; height: auto; padding: 0;">
+                            <div class="card-image" style="width: 200px; flex-shrink: 0;">
+                                <img src="https://picsum.photos/seed/aircraft4/200/200" alt="新机发布">
+                            </div>
+                            <div class="card-content" style="padding: 15px;">
+                                <h3 class="card-title" style="font-size: 1rem;"><a href="#">重磅消息：新款1:48比例模型即将发售</a></h3>
+                                <p class="card-excerpt">知名厂商发布全新系列，包含多款经典机型，预计下月开启预售。</p>
+                            </div>
+                        </article>
+                        <article class="card" style="flex-direction: row; height: auto; padding: 0;">
+                            <div class="card-image" style="width: 200px; flex-shrink: 0;">
+                                <img src="https://picsum.photos/seed/aircraft5/200/200" alt="展览信息">
+                            </div>
+                            <div class="card-content" style="padding: 15px;">
+                                <h3 class="card-title" style="font-size: 1rem;"><a href="#">全国航空模型展览会时间地点公布</a></h3>
+                                <p class="card-excerpt">今年秋季将在上海国际会展中心举办，欢迎大家报名参观交流。</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <aside class="sidebar">
+                <!-- Hot Topics Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">吧内热榜</h3>
+                    <ul class="hot-list">
+                        <li>
+                            <a href="#"><span class="rank">1</span> 2023年最佳模型品牌排行榜 <span class="count">2.3k</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="rank">2</span> 求教：旧化效果太重了怎么补救？ <span class="count">1.8k</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="rank">3</span> 谁有1:48 歼-20的详细参数？ <span class="count">1.5k</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="rank">4</span> 我的机库：展示柜搭建全过程 <span class="count">1.2k</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="rank">5</span> 遥控航模坠机事故现场还原 <span class="count">980</span></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Categories Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">模型分类</h3>
+                    <ul class="topic-list">
+                        <li><a href="#" class="topic-link">军用飞机</a></li>
+                        <li><a href="#" class="topic-link">民用客机</a></li>
+                        <li><a href="#" class="topic-link">直升机</a></li>
+                        <li><a href="#" class="topic-link">飞艇与气球</a></li>
+                        <li><a href="#" class="topic-link">其他飞行器</a></li>
+                    </ul>
+                </div>
+
+                <!-- Ad Placeholder / Promo -->
+                <div class="sidebar-widget" style="text-align: center; background: linear-gradient(45deg, #1a1a1a, #2d2d2d); border: 1px dashed var(--secondary-color);">
+                    <h3 class="widget-title" style="color: var(--secondary-color);">加入模型俱乐部</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">获取独家模型资讯与线下活动邀请。</p>
+                    <button class="btn">立即报名</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于 dnfeiji吧</h4>
+                    <p style="color: #666; font-size: 0.9rem;">dnfeiji吧是一个致力于为广大模型爱好者提供交流、展示和交易服务的平台。我们专注于飞机模型领域，分享知识，结交朋友。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">发帖求助</a></li>
+                        <li><a href="#">模型图库</a></li>
+                        <li><a href="#">二手交易</a></li>
+                        <li><a href="#">版规说明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">模型中国网</a></li>
+                        <li><a href="#">航模之家</a></li>
+                        <li><a href="#">军事论坛</a></li>
+                        <li><a href="#">模型配件商城</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 dnfeiji吧 版权所有 | 仅供学习交流使用</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
