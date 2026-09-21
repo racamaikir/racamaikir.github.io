@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="多普达手机游戏下载 - 提供多普达全系列智能手机经典与热门游戏资源下载，包括Windows Mobile、Pocket PC及早期智能机游戏，含安装教程与兼容性说明。">
+    <meta name="keywords" content="多普达手机游戏下载,多普达游戏,WM游戏,智能手机游戏,PPC游戏,多普达资源">
+    <title>多普达手机游戏下载-经典智能机游戏资源与安装指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --accent-color: #00a8e8;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 48px 0;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Search Bar */
+        .search-box {
+            margin-top: 24px;
+            position: relative;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 24px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Categories */
+        .section-title {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .more-link {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: normal;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: 1px solid #eee;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+            border-color: var(--accent-color);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .category-name {
+            font-weight: 600;
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .game-cover {
+            width: 100%;
+            height: 160px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #adb5bd;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .game-tag {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .game-info {
+            padding: 16px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .game-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .game-meta span {
+            background: #f0f2f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .game-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            flex-grow: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .game-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 8px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #004494;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid #ddd;
+            color: var(--text-secondary);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Compatibility Section */
+        .compatibility-section {
+            background: white;
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+
+        .compat-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .compat-table th, .compat-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .compat-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .compat-table td {
+            color: var(--text-secondary);
+        }
+
+        .status-ok { color: #28a745; font-weight: 600; }
+        .status-need { color: #ffc107; font-weight: 600; }
+        .status-warn { color: #dc3545; font-weight: 600; }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 40px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 12px 0;
+                gap: 12px;
+            }
+
+            .nav-menu {
+                gap: 16px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .game-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .compat-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <span style="font-size: 1.8rem;">🤖</span>
+            <span>多普达游戏库</span>
+        </a>
+        <nav class="nav-menu">
+            <a href="#" class="active">首页</a>
+            <a href="#">动作游戏</a>
+            <a href="#">策略游戏</a>
+            <a href="#">模拟经营</a>
+            <a href="#">下载指南</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>重温经典智能机时代</h1>
+        <p>专注于多普达(HTC) Windows Mobile 系列手机的游戏资源下载。提供高品质的 PPC 游戏、Pocket PC 经典游戏以及早期智能机游戏的安装支持。</p>
+        <div class="search-box">
+            <input type="text" placeholder="搜索游戏名称或机型...">
+            <button>搜索</button>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section>
+        <div class="section-title">
+            <span>热门分类</span>
+            <a href="#" class="more-link">查看全部 &rarr;</a>
+        </div>
+        <div class="category-grid">
+            <div class="category-card">
+                <span class="category-icon">⚔️</span>
+                <div class="category-name">动作射击</div>
+            </div>
+            <div class="category-card">
+                <span class="category-icon">🏎️</span>
+                <div class="category-name">赛车竞速</div>
+            </div>
+            <div class="category-card">
+                <span class="category-icon">♟️</span>
+                <div class="category-name">策略战棋</div>
+            </div>
+            <div class="category-card">
+                <span class="category-icon">⚽</span>
+                <div class="category-name">体育竞技</div>
+            </div>
+            <div class="category-card">
+                <span class="category-icon">🧩</span>
+                <div class="category-name">益智解谜</div>
+            </div>
+            <div class="category-card">
+                <span class="category-icon">🧟</span>
+                <div class="category-name">恐怖生存</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Games -->
+    <section>
+        <div class="section-title">
+            <span>本周热门下载</span>
+            <a href="#" class="more-link">更多游戏 &rarr;</a>
+        </div>
+        <div class="game-grid">
+            <!-- Game 1 -->
+            <article class="game-card">
+                <div class="game-cover">
+                    <span class="game-tag">经典</span>
+                    🎮
+                </div>
+                <div class="game-info">
+                    <h3 class="game-title">极品飞车：地下狂飙</h3>
+                    <div class="game-meta">
+                        <span>Ver: 1.0</span>
+                        <span>Size: 25MB</span>
+                    </div>
+                    <p class="game-desc">移植自PC端的经典赛车游戏，支持多点触控与手柄，体验最真实的街头赛车快感。</p>
+                    <div class="game-actions">
+                        <a href="#" class="btn btn-primary">立即下载</a>
+                        <a href="#" class="btn btn-outline">详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Game 2 -->
+            <article class="game-card">
+                <div class="game-cover">
+                    <span class="game-tag">策略</span>
+                    🗺️
+                </div>
+                <div class="game-info">
+                    <h3 class="game-title">帝国时代：征服者</h3>
+                    <div class="game-meta">
+                        <span>Ver: 1.2</span>
+                        <span>Size: 45MB</span>
+                    </div>
+                    <p class="game-desc">建立你的帝国，发展经济，训练军队，在多普达屏幕上指挥千军万马。</p>
+                    <div class="game-actions">
+                        <a href="#" class="btn btn-primary">立即下载</a>
+                        <a href="#" class="btn btn-outline">详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Game 3 -->
+            <article class="game-card">
+                <div class="game-cover">
+                    <span class="game-tag">动作</span>
+                    🥷
+                </div>
+                <div class="game-info">
+                    <h3 class="game-title">波斯王子：失落的王冠</h3>
+                    <div class="game-meta">
+                        <span>Ver: 1.0</span>
+                        <span>Size: 32MB</span>
+                    </div>
+                    <p class="game-desc">利用时间倒流机制进行战斗，精致的画面完美适配多普达屏幕比例。</p>
+                    <div class="game-actions">
+                        <a href="#" class="btn btn-primary">立即下载</a>
+                        <a href="#" class="btn btn-outline">详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Game 4 -->
+            <article class="game-card">
+                <div class="game-cover">
+                    <span class="game-tag">模拟</span>
+                    🌍
+                </div>
+                <div class="game-info">
+                    <h3 class="game-title">模拟城市：口袋版</h3>
+                    <div class="game-meta">
+                        <span>Ver: 2.1</span>
+                        <span>Size: 18MB</span>
+                    </div>
+                    <p class="game-desc">在掌心建设属于你的城市，规划道路，铺设电网，处理市民的日常需求。</p>
+                    <div class="game-actions">
+                        <a href="#" class="btn btn-primary">立即下载</a>
+                        <a href="#" class="btn btn-outline">详情</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Compatibility Guide -->
+    <section class="compatibility-section">
+        <div class="section-title">
+            <span>机型兼容性指南</span>
+        </div>
+        <p style="color: var(--text-secondary); margin-bottom: 10px;">
+            在下载多普达手机游戏之前，请确认您的设备型号与系统版本是否支持。以下是目前主流多普达机型的支持情况：
+        </p>
+        <table class="compat-table">
+            <thead>
+                <tr>
+                    <th>机型系列</th>
+                    <th>系统版本</th>
+                    <th>推荐分辨率</th>
+                    <th>状态</th>
+                    <th>备注</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>多普达 8300 (Touch Diamond)</td>
+                    <td>Windows Mobile 6.1 Pro</td>
+                    <td>480x800</td>
+                    <td class="status-ok">完美支持</td>
+                    <td>原生支持触摸</td>
+                </tr>
+                <tr>
+                    <td>多普达 8125 (Touch Pro)</td>
+                    <td>Windows Mobile 6.1 Pro</td>
+                    <td>480x640</td>
+                    <td class="status-ok">完美支持</td>
+                    <td>全键盘操作</td>
+                </tr>
+                <tr>
+                    <td>多普达 S1</td>
+                    <td>Windows Mobile 6 Standard</td>
+                    <td>240x320</td>
+                    <td class="status-need">需适配</td>
+                    <td>建议选择低分辨率版本</td>
+                </tr>
+                <tr>
+                    <td>多普达 T8288</td>
+                    <td>Windows Mobile 6.5</td>
+                    <td>480x854</td>
+                    <td class="status-ok">完美支持</td>
+                    <td>原生支持</td>
+                </tr>
+                <tr>
+                    <td>多普达 P4550 (TyTN II)</td>
+                    <td>Windows Mobile 6.1 Pro</td>
+                    <td>480x640</td>
+                    <td class="status-ok">完美支持</td>
+                    <td>全键盘与触摸双模</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-bottom: 40px;">
+        <div class="section-title">常见问题 (FAQ)</div>
+        <div style="background: white; padding: 24px; border-radius: var(--border-radius);">
+            <details style="margin-bottom: 16px; cursor: pointer;">
+                <summary style="font-weight: 600; color: var(--primary-color);">下载的文件是 .CAB 格式，如何安装？</summary>
+                <p style="margin-top: 10px; color: var(--text-secondary);">
+                    直接将 .CAB 文件传输到手机存储卡上，使用手机自带的“文件管理器”或“资源管理器”打开，点击安装即可。或者在“开始”菜单中运行“文件资源管理器”找到文件进行安装。
+                </p>
+            </details>
+            <details style="margin-bottom: 16px; cursor: pointer;">
+                <summary style="font-weight: 600; color: var(--primary-color);">游戏无法运行，提示“内存不足”怎么办？</summary>
+                <p style="margin-top: 10px; color: var(--text-secondary);">
+                    Windows Mobile 系统内存占用较高。建议关闭后台运行的程序，或清理手机内存。如果游戏体积较大，请确认手机剩余存储空间是否充足。
+                </p>
+            </details>
+            <details style="cursor: pointer;">
+                <summary style="font-weight: 600; color: var(--primary-color);">游戏画面模糊或变形？</summary>
+                <p style="margin-top: 10px; color: var(--text-secondary);">
+                    这通常是分辨率不匹配导致的。请尝试在游戏的设置菜单中调整分辨率选项，或下载专门针对您屏幕比例（如 480x800 或 480x640）优化的版本。
+                </p>
+            </details>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>关于我们</h3>
+                <p style="margin-bottom: 16px;">
+                    本站致力于收集整理多普达(HTC) Windows Mobile 平台的经典游戏资源，为怀旧玩家提供纯净、安全的下载体验。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="#">游戏排行榜</a></li>
+                    <li><a href="#">机型下载专区</a></li>
+                    <li><a href="#">ROM 刷机教程</a></li>
+                    <li><a href="#">常见问题</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>安全提示</h3>
+                <ul>
+                    <li><a href="#">杀毒检测</a></li>
+                    <li><a href="#">免责声明</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 多普达游戏库. All Rights Reserved. 本站资源仅供个人学习交流使用，请勿用于商业用途。</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+                  </html>
